@@ -22,38 +22,6 @@
 		printf("limit reached for storing usernames,\n");\
 		exit(1);\
 	}
-/*
-#define CREATE_CONTEXT(context, users) \
-	context = (daycontext*) malloc(sizeof(daycontext));\
-	bv_init(&context->user_bv, MAX_USERS);\
-	int k, uindex;\
-	context->cmd_bv=(struct bitvect*)malloc(sizeof(struct bitvect)*users);\
-	for(k=0;k<users;k++){\
-		bv_init(&context->cmd_bv[k], MAX_COMMANDS);\
-		printf("Enter the user name:\n");\
-		scanf("%s", user);\
-		STORE_IN_BUFFER(uindex, uname_buf, user);\
-		printf("index returned is %d\n", uindex);\
-		bv_set(&context->user_bv, uindex);\
-	}\
-	context->next=NULL;\
-	context->num_users=users;
-
-#define FETCH_COMMANDS(context) \
-	int j, cindex;\
-	char cmd_text[100];\
-	cindex=-1;\
-	for (j=0;j<context->num_users;j++){\
-		printf("Enter the commands for user %d or enter 'quit' for next user.\n", (j+1));\
-		fgets(cmd_text, 100, stdin);\
-		while(strncmp(cmd_text, "quit", 4) != 0){\
-			STORE_IN_BUFFER(cindex, cmd_buf, cmd_text);\
-			printf("index returned for command is %d\n", cindex);\
-			bv_set(&context->cmd_bv[j], cindex);\
-			fgets(cmd_text, 100, stdin);\
-		}\
-	}
-*/
 
 char *uname_buf[MAX_USERS];
 char *cmd_buf[MAX_COMMANDS];
